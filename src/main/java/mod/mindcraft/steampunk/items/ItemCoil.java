@@ -13,7 +13,7 @@ public class ItemCoil extends Item {
     
     @SideOnly(Side.CLIENT)
     public void registerIcons (IIconRegister ir) {
-        itemIcon = ir.registerIcon(References.MODID + ":coil." + type.getType());
+        itemIcon = ir.registerIcon(References.MODID + ":coil" + type.getType());
     }
     
     public boolean onItemUse (ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ) {

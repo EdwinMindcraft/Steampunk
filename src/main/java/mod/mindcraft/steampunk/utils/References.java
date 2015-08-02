@@ -25,5 +25,9 @@ public class References {
     public static String COIL_AIR_NAME = "steampunk.coil.air";
     public static String COIL_ICE_NAME = "steampunk.coil.ice";
     public static String COIL_WATER_NAME = "steampunk.coil.water";
-    
+    public static String VALVE_NAME = "steampunk.valve";
+    public static String IRON_COPPER_INGOT_NAME = "steampunk.alloy.ironcopper";
+    public static String STEEL_INGOT = "steampunk.steel.ingot";
+    public static String COPPER_INGOT = "steampunk.copper.ingot";
+    public static String RUSTY_GEAR = "steampunk.rusty.gear";
 }
