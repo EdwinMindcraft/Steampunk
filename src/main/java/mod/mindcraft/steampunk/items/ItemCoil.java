@@ -21,15 +21,15 @@ public class ItemCoil extends Item {
             return false;
         
         Block block = world.getBlockAt(x, y, z);
-        if (!(block instanceof BlockItemPipe))
+        if (!(block instanceof BlockPipe))
             return false;
         
         TileEntity te = world.getTileEntityAt(x, y, z);
         
-        if (!(te instanceof TileItemPipe))
+        if (!(te instanceof TilePipe))
             return false;
         
-        TileItemPipe tip = (TileItemPipe) te;
+        TilePipe tip = (TilePipe) te;
         
         if (tip.hasCoil())
             return false;
