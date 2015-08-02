@@ -2,7 +2,7 @@ package mod.mindcraft.steampunk;
 
 import mod.mindcraft.steampunk.utils.*;
 
-@Mod(modid="msteampunk", version="1.0")
+@Mod(modid=References.MODID, version="1.0")
 public class Steampunk {
     
     public static Block pressurizedFluidPipe;

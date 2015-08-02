@@ -7,4 +7,8 @@ public enum CoilType {
     FIRE,
     ICE,
     WATER;
+    
+    public getType () {
+        return getName().toLowerCase();
+    }
 }

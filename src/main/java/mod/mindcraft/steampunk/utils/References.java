@@ -1,6 +1,8 @@
 package mod.mindcraft.steampunk.utils;
 
 public class References {
+    
+    public static String MODID = "msteampunk";
     /**
     * Pressure base value (atmosphere)
     */
