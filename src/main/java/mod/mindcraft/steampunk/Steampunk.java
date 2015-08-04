@@ -52,8 +52,9 @@ public class Steampunk {
     
     @EventHandler
     public void init (FMLInitializationEvent e) {
-        OreDictonary.registerOre("ingotSteel", steelIngot);
-        OreDictonary.registerOre("ingotCopper", copperIngot);
+        OreDictionary.registerOre("ingotSteel", steelIngot);
+        OreDictionary.registerOre("ingotCopper", copperIngot);
+        OreDictionary.registerOre("ingotReinforcedCopper", ironCopperIngot);
         
         Recipes.addRecipes();
     }!
