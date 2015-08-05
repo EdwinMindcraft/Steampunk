@@ -1,6 +1,12 @@
 package mod.mindcraft.steampunk.blocks;
 
-public abstract class BlockPipe extends BlockContainer {
+public class BlockPipe extends BlockContainer {
     
-    public abstract TileEntity createNewTileEntity() {};
+    public BlockPipe() {
+        super(Material.rock);
+    }
+    
+    public TileEntity createNewTileEntity() {
+        return new TilePipe();
+    }
 }

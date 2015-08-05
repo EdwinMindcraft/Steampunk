@@ -8,11 +8,13 @@ import mod.mindcraft.steampunk.utils.*;
 @Mod(modid=References.MODID, version="1.0")
 public class Steampunk {
     
-    public static Block pressurizedFluidPipe = new BlockFluidPipe();
+    public static Block pressurizedPipe = new BlockPipe();
     public static Block fluidCompressor;
     public static Block alloyMixer;
     public static Block tank;
     public static Block pressurizedItemPipe;
+    
+    public static Fluid GAZ_WATER = new Fluid("gas_water");
     
     public static Item ironCopperIngot = new Item().setUnlocalizedName(References.IRON_COPPER_INGOT_NAME).setTextureName(References.MODID + ":ironcopperIingot");
     public static Item steelIngot = new Item().setUnlocalizedName(References.STEEL_INGOT_NAME).setTextureName(References.MODID + ":steelIngot");
@@ -29,10 +31,17 @@ public class Steampunk {
     public static Item coilIce = new ItemCoil(CoilType.ICE).setUnlocalizedName(References.COIL_ICE_NAME);
     public static Item coilWater = new ItemCoil(CoilType.WATER).setUnlocalizedName(References.COIL_WATER_NAME);
     
+    @SidedProxy(clientSide="mod.mindcraft.steampunk.client.ClientProxy", serverSide="mod.mindcraft.steampunk.CommonProxy")
+    public CommonProxy proxy;
     
     @EventHandler
     public void preInit (FMLPreInitializationEvent e) {
-        PressurizedFluidRegistry.registerPressurizedFluid(FluidRegistry.WATER, References.PRESSURE_BASE);
+        
+        proxy.registerRender();
+        
+        PressurizedFluidRegistry.registerPressurizedFluid(FluidRegistry.WATER, References.PRESSURE_BASE, References.PRESSURE_BASE*10);
+        PressurizedFluidRegistry.registerPressurizedFluid(GAZ_WATER, References.PRESSURE_BASE/10, References.PRESSURE_BASE);
+        PressurizedFluidRegistry.registerPressurizedFluid(FluidRegistry.LAVA, References.PRESSURE_BASE / 2, References.PRESSURE_BASE*2);
         
         GameRegistry.registerItem(coilBase, "coil");
         GameRegistry.registerItem(coilAir, "coil.air");
@@ -57,5 +66,5 @@ public class Steampunk {
         OreDictionary.registerOre("ingotReinforcedCopper", ironCopperIngot);
         
         Recipes.addRecipes();
-    }!
+    }
 }
